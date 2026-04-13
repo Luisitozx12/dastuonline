@@ -1,0 +1,2 @@
+/*1775790704000*/
+AUI().ready(function(){});Liferay.Portlet.ready(function(a,b){});Liferay.on("allPortletsReady",function(){});

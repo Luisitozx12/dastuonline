@@ -1,0 +1,1 @@
+window.exceedsMaximumResolution=function(t){return!window.matchMedia("(max-width: "+t+"px)").matches},window.cutCharacters=function(t,e){t.text().trim().length>e&&t.text(t.text().trim().substring(0,e)+"...")};

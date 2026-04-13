@@ -1,0 +1,607 @@
+@font-face {
+    font-family: 'davicons';
+    src: url("https://www.davivienda.com/documents/d/asset-library-820616/davicons-eot");
+    src: url("https://www.davivienda.com/documents/d/asset-library-820616/davicons-eot?#iefix") format("embedded-opentype"), url("https://www.davivienda.com/documents/d/asset-library-820616/davicons-woff") format("woff"), url("https://www.davivienda.com/documents/d/asset-library-820616/davicons-svg") format("svg");
+    font-weight: normal;
+    font-style: normal
+}
+
+[data-icon]:before {
+    font-family: 'davicons', sans-serif !important;
+    content: attr(data-icon);
+    font-style: normal !important;
+    font-weight: normal !important;
+    font-variant: normal !important;
+    text-transform: none !important;
+    speak: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale
+}
+
+[class^="dav-i-"]:before,
+[class*=" dav-i-"]:before {
+    font-family: 'davicons', sans-serif !important;
+    font-style: normal !important;
+    font-weight: normal !important;
+    font-variant: normal !important;
+    text-transform: none !important;
+    speak: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale
+}
+
+i.dav-i-accessibility:before {
+    content: "\61"
+}
+
+i.dav-i-bell:before {
+    content: "\62"
+}
+
+i.dav-i-accounts:before {
+    content: "\63"
+}
+
+i.dav-i-bell-notification:before {
+    content: "\64"
+}
+
+i.dav-i-chevron-top:before {
+    content: "\65"
+}
+
+i.dav-i-chevron-right:before {
+    content: "\66"
+}
+
+i.dav-i-download:before {
+    content: "\67"
+}
+
+i.dav-i-edit:before {
+    content: "\68"
+}
+
+i.dav-i-home-lease:before {
+    content: "\69"
+}
+
+i.dav-i-home-buy:before {
+    content: "\6a"
+}
+
+i.dav-i-modal-alert:before {
+    content: "\6b"
+}
+
+i.dav-i-modal-default:before {
+    content: "\6c"
+}
+
+i.dav-i-plane:before {
+    content: "\6d"
+}
+
+i.dav-i-phone:before {
+    content: "\6e"
+}
+
+i.dav-i-saturation-high:before {
+    content: "\6f"
+}
+
+i.dav-i-saturation-low:before {
+    content: "\70"
+}
+
+i.dav-i-video-call:before {
+    content: "\71"
+}
+
+i.dav-i-trash:before {
+    content: "\72"
+}
+
+i.dav-i-screen:before {
+    content: "\74"
+}
+
+i.dav-i-play:before {
+    content: "\75"
+}
+
+i.dav-i-modal-disclaimer:before {
+    content: "\76"
+}
+
+i.dav-i-home-sell:before {
+    content: "\77"
+}
+
+i.dav-i-enroll-active:before {
+    content: "\78"
+}
+
+i.dav-i-close:before {
+    content: "\79"
+}
+
+i.dav-i-building:before {
+    content: "\7a"
+}
+
+i.dav-i-alert:before {
+    content: "\41"
+}
+
+i.dav-i-arrow-bottom:before {
+    content: "\42"
+}
+
+i.dav-i-calendar:before {
+    content: "\43"
+}
+
+i.dav-i-code:before {
+    content: "\44"
+}
+
+i.dav-i-information:before {
+    content: "\45"
+}
+
+i.dav-i-enroll-inactive:before {
+    content: "\46"
+}
+
+i.dav-i-modal-error:before {
+    content: "\47"
+}
+
+i.dav-i-print:before {
+    content: "\48"
+}
+
+i.dav-i-search:before {
+    content: "\49"
+}
+
+i.dav-i-visual-disability:before {
+    content: "\4a"
+}
+
+i.dav-i-youtube:before {
+    content: "\73"
+}
+
+i.dav-i-security:before {
+    content: "\4b"
+}
+
+i.dav-i-profile:before {
+    content: "\4c"
+}
+
+i.dav-i-modal-success:before {
+    content: "\4d"
+}
+
+i.dav-i-instagram:before {
+    content: "\4e"
+}
+
+i.dav-i-exit:before {
+    content: "\4f"
+}
+
+i.dav-i-color-blind:before {
+    content: "\50"
+}
+
+i.dav-i-car:before {
+    content: "\51"
+}
+
+i.dav-i-arrow-down-left:before {
+    content: "\52"
+}
+
+i.dav-i-arrow-down-right:before {
+    content: "\53"
+}
+
+i.dav-i-card:before {
+    content: "\54"
+}
+
+i.dav-i-configuration:before {
+    content: "\55"
+}
+
+i.dav-i-eye:before {
+    content: "\56"
+}
+
+i.dav-i-interrogation:before {
+    content: "\57"
+}
+
+i.dav-i-monochrome:before {
+    content: "\58"
+}
+
+i.dav-i-profile-business:before {
+    content: "\59"
+}
+
+i.dav-i-share:before {
+    content: "\5a"
+}
+
+i.dav-i-star:before {
+    content: "\30"
+}
+
+i.dav-i-profile-filled:before {
+    content: "\31"
+}
+
+i.dav-i-more:before {
+    content: "\32"
+}
+
+i.dav-i-keyboard:before {
+    content: "\33"
+}
+
+i.dav-i-eye-block:before {
+    content: "\34"
+}
+
+i.dav-i-contrast-high:before {
+    content: "\35"
+}
+
+i.dav-i-cash-register:before {
+    content: "\36"
+}
+
+i.dav-i-arrow-left:before {
+    content: "\37"
+}
+
+i.dav-i-arrow-right:before {
+    content: "\38"
+}
+
+i.dav-i-casita-outline:before {
+    content: "\39"
+}
+
+i.dav-i-copy:before {
+    content: "\21"
+}
+
+i.dav-i-facebook:before {
+    content: "\22"
+}
+
+i.dav-i-language:before {
+    content: "\23"
+}
+
+i.dav-i-office-mobile:before {
+    content: "\24"
+}
+
+i.dav-i-profile-investments:before {
+    content: "\25"
+}
+
+i.dav-i-star-active:before {
+    content: "\26"
+}
+
+i.dav-i-statistics:before {
+    content: "\27"
+}
+
+i.dav-i-qr:before {
+    content: "\28"
+}
+
+i.dav-i-option-more:before {
+    content: "\29"
+}
+
+i.dav-i-leaf:before {
+    content: "\2a"
+}
+
+i.dav-i-family:before {
+    content: "\2b"
+}
+
+i.dav-i-credit:before {
+    content: "\2c"
+}
+
+i.dav-i-category:before {
+    content: "\2d"
+}
+
+i.dav-i-arrow-top:before {
+    content: "\2e"
+}
+
+i.dav-i-arrow-top-left:before {
+    content: "\2f"
+}
+
+i.dav-i-cell-phone:before {
+    content: "\3a"
+}
+
+i.dav-i-cursor-large:before {
+    content: "\3b"
+}
+
+i.dav-i-filter:before {
+    content: "\3c"
+}
+
+i.dav-i-leimotiv:before {
+    content: "\3d"
+}
+
+i.dav-i-order:before {
+    content: "\3e"
+}
+
+i.dav-i-qr-create:before {
+    content: "\3f"
+}
+
+i.dav-i-text-size:before {
+    content: "\40"
+}
+
+i.dav-i-tiktok:before {
+    content: "\5b"
+}
+
+i.dav-i-qr-read:before {
+    content: "\5d"
+}
+
+i.dav-i-pay:before {
+    content: "\5e"
+}
+
+i.dav-i-less:before {
+    content: "\5f"
+}
+
+i.dav-i-flag-countries:before {
+    content: "\60"
+}
+
+i.dav-i-daviplata:before {
+    content: "\7b"
+}
+
+i.dav-i-check:before {
+    content: "\7c"
+}
+
+i.dav-i-arrow-top-right:before {
+    content: "\7d"
+}
+
+i.dav-i-assistant:before {
+    content: "\7e"
+}
+
+i.dav-i-chevron-down:before {
+    content: "\5c"
+}
+
+i.dav-i-decline:before {
+    content: "\e000"
+}
+
+i.dav-i-glosary:before {
+    content: "\e001"
+}
+
+i.dav-i-mail:before {
+    content: "\e002"
+}
+
+i.dav-i-pay-methods:before {
+    content: "\e003"
+}
+
+i.dav-i-recharge:before {
+    content: "\e004"
+}
+
+i.dav-i-tooltip:before {
+    content: "\e005"
+}
+
+i.dav-i-transfer:before {
+    content: "\e006"
+}
+
+i.dav-i-refresh:before {
+    content: "\e007"
+}
+
+i.dav-i-person:before {
+    content: "\e008"
+}
+
+i.dav-i-menu-burger:before {
+    content: "\e009"
+}
+
+i.dav-i-headphone:before {
+    content: "\e00a"
+}
+
+i.dav-i-document:before {
+    content: "\e00b"
+}
+
+i.dav-i-chevron-left:before {
+    content: "\e00c"
+}
+
+i.dav-i-attach:before {
+    content: "\e00d"
+}
+
+@font-face {
+    font-family: 'Davivienda';
+    src: url("https://www.davivienda.com/documents/d/asset-library-820616/davivienda-regular-woff2") format("woff2"), url("https://www.davivienda.com/documents/d/asset-library-820616/davivienda-regular-woff") format("woff"), url("https://www.davivienda.com/documents/d/asset-library-820616/davivienda-regular-ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal
+}
+
+@font-face {
+    font-family: 'Davivienda';
+    src: url("https://www.davivienda.com/documents/d/asset-library-820616/davivienda-light-woff2") format("woff2"), url("https://www.davivienda.com/documents/d/asset-library-820616/davivienda-light-woff") format("woff"), url("https://www.davivienda.com/documents/d/asset-library-820616/davivienda-light-ttf") format("truetype");
+    font-weight: 300;
+    font-style: normal
+}
+
+@font-face {
+    font-family: 'Davivienda';
+    src: url("https://www.davivienda.com/documents/d/asset-library-820616/davivienda-bold-woff2") format("woff2"), url("https://www.davivienda.com/documents/d/asset-library-820616/davivienda-bold-woff") format("woff"), url("https://www.davivienda.com/documents/d/asset-library-820616/davivienda-bold-ttf") format("truetype");
+    font-weight: 700;
+    font-style: normal
+}
+
+@font-face {
+    font-family: 'Davivienda';
+    src: url("https://www.davivienda.com/documents/d/asset-library-820616/davivienda-semibold-woff2") format("woff2"), url("https://www.davivienda.com/documents/d/asset-library-820616/davivienda-semibold-woff") 
+    format("woff"), url("https://www.davivienda.com/documents/d/asset-library-820616/davivienda-semibold-ttf") format("truetype");
+    font-weight: 500;
+    font-style: normal
+}
+
+@font-face {
+    font-family: 'Davivienda';
+    src: url("https://www.davivienda.com/documents/d/asset-library-820616/davivienda-extrabold-woff2") format("woff2"), url("https://www.davivienda.com/documents/d/asset-library-820616/davivienda-extrabold-woff") 
+    format("woff"), url("https://www.davivienda.com/documents/d/asset-library-820616/davivienda-extrabold-ttf") format("truetype");
+    font-weight: 900;
+    font-style: normal
+}
+
+@font-face {
+    font-family: 'Davivienda';
+    src: url("https://www.davivienda.com/documents/d/asset-library-820616/davivienda-italic-woff2") format("woff2"), url("https://www.davivienda.com/documents/d/asset-library-820616/davivienda-italic-woff") format("woff"), url("https://www.davivienda.com/documents/d/asset-library-820616/davivienda-italic-ttf") format("truetype");
+    font-weight: 400;
+    font-style: italic
+}
+
+@font-face {
+    font-family: 'Davivienda';
+    src: url("https://www.davivienda.com/documents/d/asset-library-820616/davivienda-light-italic-woff2") format("woff2"), url("https://www.davivienda.com/documents/d/asset-library-820616/davivienda-light-italic-woff") format("woff"), url("https://www.davivienda.com/documents/d/asset-library-820616/davivienda-light-italic-ttf") format("truetype");
+    font-weight: 300;
+    font-style: italic
+}
+
+@font-face {
+    font-family: 'Davivienda';
+    src: url("https://www.davivienda.com/documents/d/asset-library-820616/davivienda-bold-italic-woff2") format("woff2"), url("https://www.davivienda.com/documents/d/asset-library-820616/davivienda-bold-italic-woff") format("woff"), url("https://www.davivienda.com/documents/d/asset-library-820616/davivienda-bold-italic-ttf") format("truetype");
+    font-weight: 700;
+    font-style: italic 
+}
+
+@font-face {
+    font-family: 'Davivienda';
+    src: url("https://www.davivienda.com/documents/d/asset-library-820616/davivienda-semibold-italic-woff2") format("woff2"), url("https://www.davivienda.com/documents/d/asset-library-820616/davivienda-semibold-italic-woff") format("woff"), url("https://www.davivienda.com/documents/d/asset-library-820616/davivienda-semibold-italic-ttf") format("truetype");
+    font-weight: 500;
+    font-style: italic
+}
+
+@font-face {
+    font-family: 'Davivienda';
+    src: url("https://www.davivienda.com/documents/d/asset-library-820616/davivienda-extrabold-italic-woff2") format("woff2"), url("https://www.davivienda.com/documents/d/asset-library-820616/davivienda-extrabold-italic-woff") format("woff"), url("https://www.davivienda.com/documents/d/asset-library-820616/davivienda-extrabold-italic-ttf") format("truetype");
+    font-weight: 900;
+    font-style: italic
+}
+
+@font-face {
+    font-family: 'Davivienda Condensed';
+    src: url("https://www.davivienda.com/documents/d/asset-library-820616/davivienda-condensed-regular-woff2") format("woff2"), url("https://www.davivienda.com/documents/d/asset-library-820616/davivienda-condensed-regular-woff") format("woff"), url("https://www.davivienda.com/documents/d/asset-library-820616/davivienda-condensed-regular-ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal
+}
+
+@font-face {
+    font-family: 'Davivienda Condensed';
+    src: url("https://www.davivienda.com/documents/d/asset-library-820616/davivienda-condensed-light-woff2") format("woff2"), url("https://www.davivienda.com/documents/d/asset-library-820616/davivienda-condensed-light-woff") format("woff"), url("https://www.davivienda.com/documents/d/asset-library-820616/davivienda-condensed-light-ttf") format("truetype");
+    font-weight: 300;
+    font-style: normal
+}
+
+@font-face {
+    font-family: 'Davivienda Condensed';
+    src: url("https://www.davivienda.com/documents/d/asset-library-820616/davivienda-condensed-bold-woff2") format("woff2"), url("https://www.davivienda.com/documents/d/asset-library-820616/davivienda-condensed-bold-woff") format("woff"), url("https://www.davivienda.com/documents/d/asset-library-820616/davivienda-condensed-bold-ttf") format("truetype");
+    font-weight: 700;
+    font-style: normal
+}
+
+@font-face {
+    font-family: 'Davivienda Condensed';
+    src: url("https://www.davivienda.com/documents/d/asset-library-820616/davivienda-condensed-semibold-woff2") format("woff2"), url("https://www.davivienda.com/documents/d/asset-library-820616/davivienda-condensed-semibold-woff") format("woff"), url("https://www.davivienda.com/documents/d/asset-library-820616/davivienda-condensed-semibold-ttf") format("truetype");
+    font-weight: 500;
+    font-style: normal
+}
+
+@font-face {
+    font-family: 'Davivienda Condensed';
+    src: url("https://www.davivienda.com/documents/d/asset-library-820616/davivienda-condensed-extrabold-woff2") format("woff2"), url("https://www.davivienda.com/documents/d/asset-library-820616/davivienda-condensed-extrabold-woff") format("woff"), url("https://www.davivienda.com/documents/d/asset-library-820616/davivienda-condensed-extrabold-ttf") format("truetype");
+    font-weight: 900;
+    font-style: normal
+}
+
+@font-face {
+    font-family: 'Davivienda Condensed';
+    src: url("https://www.davivienda.com/documents/d/asset-library-820616/davivienda-condensed-italic-woff2") format("woff2"), url("https://www.davivienda.com/documents/d/asset-library-820616/davivienda-condensed-italic-woff") format("woff"), url("https://www.davivienda.com/documents/d/asset-library-820616/davivienda-condensed-italic-ttf") format("truetype");
+    font-weight: 400;
+    font-style: italic
+}
+
+@font-face {
+    font-family: 'Davivienda Condensed';
+    src: url("https://www.davivienda.com/documents/d/asset-library-820616/davivienda-condensed-light-italic-woff2") format("woff2"), url("https://www.davivienda.com/documents/d/asset-library-820616/davivienda-condensed-light-italic-woff") format("woff"), url("https://www.davivienda.com/documents/d/asset-library-820616/davivienda-condensed-light-italic-ttf") format("truetype");
+    font-weight: 300;
+    font-style: italic
+}
+
+@font-face {
+    font-family: 'Davivienda Condensed';
+    src: url("https://www.davivienda.com/documents/d/asset-library-820616/davivienda-condensed-bold-italic-woff2") format("woff2"), url("https://www.davivienda.com/documents/d/asset-library-820616/davivienda-condensed-bold-italic-woff") format("woff"), url("https://www.davivienda.com/documents/d/asset-library-820616/davivienda-condensed-bold-italic-ttf") format("truetype");
+    font-weight: 700;
+    font-style: italic
+}
+
+@font-face {
+    font-family: 'Davivienda Condensed';
+    src: url("https://www.davivienda.com/documents/d/asset-library-820616/davivienda-condensed-semibold-italic-woff2") format("woff2"), url("https://www.davivienda.com/documents/d/asset-library-820616/davivienda-condensed-semibold-italic-woff") format("woff"), url("https://www.davivienda.com/documents/d/asset-library-820616/davivienda-condensed-semibold-italic-ttf") format("truetype");
+    font-weight: 500;
+    font-style: italic
+}
+
+@font-face {
+    font-family: 'Davivienda Condensed';
+    src: url("https://www.davivienda.com/documents/d/asset-library-820616/davivienda-condensed-extrabold-italic-woff2") format("woff2"), url("https://www.davivienda.com/documents/d/asset-library-820616/davivienda-condensed-extrabold-italic-woff") format("woff"), url("https://www.davivienda.com/documents/d/asset-library-820616/davivienda-condensed-extrabold-italic-ttf") format("truetype");
+    font-weight: 900;
+    font-style: italic
+}
